@@ -83,10 +83,9 @@ class TLSClientConnection {
 	}
 }
 
-version(libdtls_MAIN) {
-const string MSG = "GET / HTTP/1.0\r\n\r\n\0";
 
-int main() {
+unittest {
+	string MSG = "GET / HTTP/1.0\r\n\r\n\0";
 	// connect to a host and start up tls
 	auto sock = new TLSClientConnection(new InternetAddress("mail.google.com",443));
 	
@@ -102,5 +101,4 @@ int main() {
 	// houston, we have html (if we've made it this far)
 	writefln("Got output from gmail: %s",output);
 	return 0;
-}
 }
