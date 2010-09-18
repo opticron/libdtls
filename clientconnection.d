@@ -58,7 +58,7 @@ class TLSClientConnection {
 	}
 	/// Send data over the encrypted connection.
 	void send(string toSend) {
-		gnutls_record_send (session, MSG.ptr, MSG.length);
+		gnutls_record_send (session, toSend.ptr, toSend.length);
 	}
 	/// Grab data from the encrypted connection.  This operation is blocking.
 	/// Return: Any available data.  A zero-length string means the connection has been closed.
