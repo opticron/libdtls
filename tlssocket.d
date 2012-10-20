@@ -1,7 +1,7 @@
 module tlssocket;
 import std.socket;
 import std.stdio;
-import dtls.gnutls;
+import libdtls.gnutls;
 /// This TcpSocket derivative acts just like a socket, except it's using TLS x509 encryption.
 /// Select probably doesn't work. Technically, it's possible to rework this to be able to use services supporting starttls.
 class TlsSocket:TcpSocket {
